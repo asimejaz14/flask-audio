@@ -55,4 +55,4 @@ def add_fingprint(url, id):
 
 
 if __name__ == '__main__':
-    app.run(host='spinstatz.online', port='8001')
+    app.run()
