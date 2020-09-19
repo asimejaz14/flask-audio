@@ -28,15 +28,15 @@ def matching(request):
         "python print_matching_test.py match --dbase fpdbase.pklz --min-count 1 {context}".format(
             context='1' + "." + link[-1]),
         shell=True)
-    try:
-        with open('result.txt') as f:
-            g = f.read()
-            result = g.replace("audios\\", '')
-            result = result.split('.')[0]
+    # try:
+    with open('result.txt') as f:
+        g = f.read()
+        result = g.replace("audios\\", '')
+        result = result.split('.')[0]
             # print(result)
-            return result
-    except:
-        return "Audio not found in database"
+        return result
+    # except:
+    #     return "Audio not found in database"
 
 
 @app.route('/add_fingprint/<path:url>/<int:id>', methods=['Get', 'POST'])
