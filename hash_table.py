@@ -12,11 +12,11 @@ from __future__ import division, print_function
 import gzip
 import math
 import os
-import random
 import sys
 
 import numpy as np
 import scipy.io
+import secrets
 
 if sys.version_info[0] >= 3:
     # Python 3 specific definitions
@@ -126,7 +126,7 @@ class HashTable(object):
                 self.table[hash_, count] = val
             else:
                 # Choose a point at random
-                slot = random.randint(0, count)
+                slot = secrets.SystemRandom().randint(0, count)
                 # Only store if random slot wasn't beyond end
                 if slot < self.depth:
                     self.table[hash_, slot] = val
